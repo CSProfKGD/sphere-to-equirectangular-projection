@@ -71,12 +71,6 @@ h1 {
   letter-spacing: -0.015em;
 }
 
-.header-copy em {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.08em;
-  font-weight: 400;
-}
-
 .projection-stage {
   position: relative;
   min-height: 520px;
@@ -177,7 +171,7 @@ h1 {
   border: 0;
   background: transparent;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .reset-control:hover {
@@ -242,7 +236,7 @@ input[type="range"]::-moz-range-thumb {
 
 .range-endpoints {
   color: rgba(255, 255, 255, 0.48);
-  font: 520 10.5px/1 var(--font-geist-mono), monospace;
+  font: 560 11px/1 var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.025em;
   transform: translateY(5px);
 }

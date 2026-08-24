@@ -8,7 +8,7 @@ The morph is a teaching device, not an additional map projection. Only the spher
 
 ## First experience
 
-The page opens with the title “Sphere to Equirectangular Projection” and a brighter italic subtitle “Same world. Different coordinates.” above a large textured sphere on the same solid black field used by the Partial Derivatives Visualization. Sparse two-level latitude and longitude curves reveal the spherical coordinate cells. The duplicated longitude seam is revealed as playback begins so its opening helps explain the unwrap. The stage omits endpoint titles, explanatory cards, and a visible numeric `t`; a minimal fading control strip contains only Play/Pause, the morph scrubber, and Reset.
+The page opens with the title “Sphere to Equirectangular Projection” and the upright subtitle “Same world. Different coordinates.” above a large textured sphere on the same solid black field used by the Partial Derivatives Visualization. Sparse two-level latitude and longitude curves reveal the spherical coordinate cells. The duplicated longitude seam is revealed as playback begins so its opening helps explain the unwrap. The stage omits endpoint titles, explanatory cards, and a visible numeric `t`; a minimal fading control strip contains only Play/Pause, the morph scrubber, and Reset.
 
 The initial viewpoint is exactly front-on: the camera sits on the positive z axis, looks toward the origin, and its optical axis is perpendicular to the screen. Dragging orbits only while the shape remains mostly spherical. Playback first rotates the sphere and grid about the world x axis while any manual observer orbit eases back to the canonical front axis, pauses briefly, and then carries `t` once from 0 to 1 with a calm explanatory unfold.
 

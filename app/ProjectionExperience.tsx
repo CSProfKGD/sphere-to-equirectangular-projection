@@ -662,7 +662,7 @@ export function ProjectionExperience() {
       <header className="lecture-header">
         <div>
           <h1>Sphere to Equirectangular Projection</h1>
-          <p className="header-copy"><em>Same world. Different coordinates.</em></p>
+          <p className="header-copy">Same world. Different coordinates.</p>
         </div>
       </header>
 
