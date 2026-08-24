@@ -4,7 +4,7 @@ Read `context.md` before changing mathematical behavior, interaction, visual des
 
 ## Product contract
 
-This repository implements a focused, client-only visualization of how a spherical viewing-direction domain is parameterized as an equirectangular projection (ERP). Keep the experience centered on one textured mesh, one morph parameter `t`, a subordinate latitude/longitude grid, the duplicated longitude seam, and endpoint-aware labels.
+This repository implements a focused, client-only visualization of how a spherical viewing-direction domain is parameterized as an equirectangular projection (ERP). Keep the experience centered on one textured mesh, one morph parameter `t`, a subordinate two-level latitude/longitude grid, and a topologically duplicated longitude seam that is emphasized only during opening.
 
 The intermediate interpolation is explanatory only. Never describe or visually frame intermediate surfaces as a standard map projection. The mathematically meaningful endpoints are the sphere at `t=0` and ERP at `t=1`.
 
@@ -38,20 +38,21 @@ Update `context.md` in the same change whenever the audience, equations, paramet
 ## Interaction and accessibility
 
 - Provide a labeled range input for `t`, Play/Pause, and Reset.
-- Playback travels from sphere to ERP and back; user scrubbing updates the scene immediately.
-- Orbiting is available while mostly spherical and fades to disabled as the surface flattens.
+- Playback begins with a short world-x rotation of the sphere/grid while any manually orbited camera eases to the canonical front axis and `t=0`, pauses briefly, then unfolds once from sphere to ERP and stops. Reset hides the grid, and user scrubbing updates the scene immediately.
+- Orbiting uses gentle inertial decay while mostly spherical and fades to disabled as the surface flattens.
 - Respect reduced motion, visible keyboard focus, touch targets, narrow layouts, and WebGL fallback content.
 - Announce the current morph value and conceptual state to assistive technology.
 
 ## Visual direction
 
 - Use a clean, solid-black Apple-style educational canvas matching the Partial Derivatives Visualization, with restrained near-white typography and minimal chrome.
-- Make the environment texture primary, the latitude/longitude grid clear but subordinate, and the duplicated seam unmistakable.
-- Keep endpoint labels, longitude, latitude, and seam callout readable without building a legend or side panel.
+- Make the environment texture primary and the latitude/longitude grid clear but subordinate; reveal the duplicated seam only as an understated aid to the opening motion.
+- Keep coordinate-axis annotations, endpoint titles, state pills, legends, and side panels out of the visible canvas.
+- Do not show the vertex interpolation equation or orbit instructions on the canvas.
 - Avoid scenery, heavy shadows, decorative effects, dense dashboards, and unrelated controls.
 
 ## Verification
 
 - Unit-test endpoint equations, interpolation, texture coordinates, seam duplication, and finite geometry.
-- Test slider, playback reversal, reset, reduced motion, orbit gating, WebGL fallback, and narrow layouts when those behaviors change.
+- Test slider, one-way playback completion, reset, reduced motion, orbit gating, WebGL fallback, and narrow layouts when those behaviors change.
 - Before handoff, run lint, tests, a production build, and browser checks at desktop and phone widths.

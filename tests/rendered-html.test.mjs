@@ -22,6 +22,6 @@ test("server-renders the projection lecture shell", async () => {
   assert.match(html, /Sphere to ERP — Interactive Projection/);
   assert.match(html, /Sphere/);
   assert.match(html, /ERP/);
-  assert.match(html, /One panorama, two parameterizations/);
+  assert.match(html, /Same world\. Different coordinates\./);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
