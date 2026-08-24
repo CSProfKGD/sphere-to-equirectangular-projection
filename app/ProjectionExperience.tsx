@@ -422,12 +422,15 @@ export function ProjectionExperience() {
     renderer.domElement.addEventListener("pointerup", endPointer);
     renderer.domElement.addEventListener("pointercancel", endPointer);
 
-    let viewportAspect = 1;
+    let viewportWidth = Math.max(1, Math.round(mount.clientWidth));
+    let viewportHeight = Math.max(1, Math.round(mount.clientHeight));
+    let viewportAspect = viewportWidth / viewportHeight;
+    let renderedWidth = 0;
+    let renderedHeight = 0;
     const resize = () => {
-      const width = Math.max(1, mount.clientWidth);
-      const height = Math.max(1, mount.clientHeight);
-      viewportAspect = width / height;
-      renderer.setSize(width, height, false);
+      viewportWidth = Math.max(1, Math.round(mount.clientWidth));
+      viewportHeight = Math.max(1, Math.round(mount.clientHeight));
+      viewportAspect = viewportWidth / viewportHeight;
     };
 
     const resizeObserver = new ResizeObserver(resize);
@@ -437,6 +440,15 @@ export function ProjectionExperience() {
     let frameId = 0;
     let previousTime = performance.now();
     const render = (time: number) => {
+      if (
+        viewportWidth !== renderedWidth ||
+        viewportHeight !== renderedHeight
+      ) {
+        renderer.setSize(viewportWidth, viewportHeight, false);
+        renderedWidth = viewportWidth;
+        renderedHeight = viewportHeight;
+      }
+
       const delta = Math.min(0.05, (time - previousTime) / 1000);
       previousTime = time;
 

@@ -70,6 +70,8 @@ Use a spacious continuous solid-black composition with no border or rounded box 
 
 The interface uses a presentation-like 16:9 composition and one minimal single-row control strip with no surrounding card. The controls recede when idle. Geometry placement is morph- and aspect-aware: the sphere is roughly 15% larger than the earlier build and visually centered, while the wide ERP uses available vertical slack to shift upward and retain a guaranteed top margin. Portrait layouts size the stage from viewport width rather than stretching it to viewport height. The Sphere and ERP scrubber endpoints sit below the thumb with clear vertical separation and use slightly elevated size and contrast for lecture-hall readability. Keep coordinate-axis annotations, the interpolation equation, and orbit instructions out of the visible canvas so the texture, seam, and grid remain primary.
 
+Resize observations only record the latest rounded viewport dimensions; the renderer applies a changed backing-store size once at the start of the next animation frame. This keeps live window resizing synchronized with drawing and avoids transient blank frames.
+
 ## Acceptance criteria
 
 - The sphere and flat ERP endpoints match the stated equations.

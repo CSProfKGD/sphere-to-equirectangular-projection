@@ -107,6 +107,7 @@ h1 {
 }
 
 .projection-canvas {
+  display: block;
   cursor: grab;
   touch-action: none;
 }
